@@ -11,8 +11,12 @@
 // export class AppModule {}
 import { Module } from '@nestjs/common';
 import { CatsModule } from './cats/cats.module';
+import { UserService } from './user/user.service';
+import { UserModule } from './user/user.module';
 
 @Module({
-  imports: [CatsModule],
+  imports: [CatsModule, UserModule],
+  providers: [UserService],
 })
 export class AppModule {}
+
